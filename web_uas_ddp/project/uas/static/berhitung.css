@@ -1,0 +1,146 @@
+/* ============ Tema Math Ceria ============ */
+:root {
+    --primary: #FF6B6B;
+    /* Pink */
+    --secondary: #4ECDC4;
+    /* Tosca */
+    --accent: #FFE66D;
+    /* Kuning */
+    --purple: #6C5CE7;
+    /* Ungu */
+    --bg-light: #F7FFF7;
+    /* Putih Mint */
+    --text-main: #2F3061;
+    /* Biru Gelap */
+    --radius-soft: 25px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    background-color: #7ed957;
+    /* Tetap hijau asli agar transisi terasa familiar */
+    margin: 0;
+    padding: 40px 20px;
+    color: var(--text-main);
+}
+
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+h2,
+p {
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.soal {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: var(--radius-soft);
+    /* Efek bayangan 3D tebal khas Math Ceria */
+    box-shadow: 0 10px 0px rgba(0,0,0,0.1); 
+    border: 3px solid transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    min-height: 200px;
+    transition: transform 0.2s ease;
+}
+
+.soal:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.jawaban {
+    align-self: center;
+    margin-top: 15px;
+    width: 80px;
+    height: 50px;
+    border-radius: 15px;
+    border: 3px solid #f0f0f0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--purple);
+    transition: all 0.2s ease;
+}
+
+.gambar {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1.2;
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    bottom: 0;
+}
+
+/* ============ Tombol Cek Jawaban ============ */
+button {
+    margin: 30px 0;
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 50px;
+    border: none;
+    /* Efek tombol 3D yang bisa ditekan */
+    border-bottom: 5px solid #d64545;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #ff8585;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(4px);
+    border-bottom-width: 0px;
+    box-shadow: none;
+}
+
+/* ============ Responsif HP ============ */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}

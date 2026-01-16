@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Ceria - Mengenal Bentuk</title>
+    <link rel="stylesheet" href="{% static 'bilangan.css' %}?v=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">∑</span>
+                <span class="brand-name">Math Ceria</span>
+            </div>
+            <nav class="site-nav">
+                <div class="auth-actions">
+                    <a href="{% url 'dashboard' %}" class="btn btn-logout">Keluar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="materi">
+        <div class="container">
+            <h1 class="section-title">Ayo Mengenal Bentuk!</h1>
+            <p style="text-align: center; font-family: 'Quicksand'; font-weight: 700; color: #2F3061; margin-top: -20px; margin-bottom: 40px;">
+                Coba lihat di sekitarmu, ada bentuk apa saja ya?
+            </p>
+
+            <div class="materi-grid">
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FF9F43, #FFBD7E);">🟡</div>
+                        <div class="materi-content">
+                            <h3>Lingkaran</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #FF9F43;">◯</div>
+                            <p>Bentuknya bulat seperti <b>bola</b> atau <b>donat</b>. Tidak punya sudut, jadi bisa menggelinding!</p>
+                            <div class="contoh-box">Contoh: Roda mobil, Jam dinding</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #4ECDC4, #78E0D8);">🟦</div>
+                        <div class="materi-content">
+                            <h3>Persegi</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #4ECDC4;">⬜</div>
+                            <p>Punya <b>4 sisi</b> yang sama panjang. Seperti kotak kado yang rapi!</p>
+                            <div class="contoh-box">Contoh: Ubin lantai, Jendela</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">🔺</div>
+                        <div class="materi-content">
+                            <h3>Segitiga</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #FF6B6B;">△</div>
+                            <p>Punya <b>3 sudut</b> yang lancip di ujungnya. Mirip seperti gunung atau atap rumah!</p>
+                            <div class="contoh-box">Contoh: Potongan pizza, Topi ulang tahun</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #6C5CE7, #a29bfe);">🚪</div>
+                        <div class="materi-content">
+                            <h3>Persegi Panjang</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #6C5CE7;">▭</div>
+                            <p>Mirip persegi, tapi ada sisi yang <b>lebih panjang</b>. Seperti buku atau pintu.</p>
+                            <div class="contoh-box">Contoh: Buku gambar, Papan tulis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #F9D423, #ffdb3a);">⭐</div>
+                        <div class="materi-content">
+                            <h3>Bintang</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #F9D423;">★</div>
+                            <p>Bentuk cantik yang punya <b>banyak sudut</b> tajam. Berkilau di malam hari!</p>
+                            <div class="contoh-box">Contoh: Bintang di langit, Bintang laut</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FD79A8, #fab1a0);">❤️</div>
+                        <div class="materi-content">
+                            <h3>Hati</h3>
+                            <div style="font-size: 4rem; margin: 10px 0; color: #FD79A8;">♥</div>
+                            <p>Bentuk yang melambangkan <b>kasih sayang</b>. Lengkungannya sangat manis!</p>
+                            <div class="contoh-box">Contoh: Kartu ucapan sayang</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #666; font-family: 'Quicksand'; font-weight: 700;">
+        <p>&copy; 2026 - 🌈 Materi Matematika Ceria 🌈</p>
+    </footer>
+
+</body>
+</html>

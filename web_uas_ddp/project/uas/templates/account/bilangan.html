@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Ceria - Materi Bilangan</title>
+    <link rel="stylesheet" href="{% static 'bilangan.css' %}?v=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">∑</span>
+                <span class="brand-name">Math Ceria</span>
+            </div>
+            <nav class="site-nav">
+                <div class="auth-actions">
+                    <a href="{% url 'dashboard' %}" class="btn btn-logout">Keluar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="materi">
+        <div class="container">
+            <h1 class="section-title">Ayo Belajar Bilangan</h1>
+
+            <div class="materi-grid">
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon">🍎</div>
+                        <div class="materi-content">
+                            <h3>Bilangan Asli</h3>
+                            <img src="{% static 'assets/images 2.png' %}" alt="Asli" height="60"
+                                style="margin-bottom: 15px;">
+                            <p>Bilangan asli adalah angka-angka yang dimulai dari <b>angka 1</b> dan terus bertambah!
+                            </p>
+                            <div class="contoh-box">Contoh: 1, 2, 3, 4, 5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon">🌀</div>
+                        <div class="materi-content">
+                            <h3>Bilangan Bulat</h3>
+                            <img src="{% static 'assets/bil.bulat.png' %}" alt="Bulat" height="60"
+                                style="margin-bottom: 15px;">
+                            <p>Bilangan ini sangat lengkap! Ada <b>Negatif (-)</b>, angka <b>Nol (0)</b>, dan
+                                <b>Positif</b>.</p>
+                            <div class="contoh-box">Contoh: -2, -1, 0, 1, 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon">👫</div>
+                        <div class="materi-content">
+                            <h3>Bilangan Genap</h3>
+                            <img src="{% static 'assets/bil.genap.png' %}" alt="Genap" height="60"
+                                style="margin-bottom: 15px;">
+                            <p>Bilangan yang adil karena <b>habis dibagi dua</b> dan selalu punya pasangan!</p>
+                            <div class="contoh-box">Contoh: 2, 4, 6, 8, 10</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon">☝️</div>
+                        <div class="materi-content">
+                            <h3>Bilangan Ganjil</h3>
+                            <img src="{% static 'assets/bil.ganjil.png' %}" alt="Ganjil" height="60"
+                                style="margin-bottom: 15px;">
+                            <p>Bilangan yang unik! Jika dibagi dua, pasti akan selalu <b>ada sisa satu</b> yang
+                                sendirian.</p>
+                            <div class="contoh-box">Contoh: 1, 3, 5, 7, 9</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #ddd; margin-top: 20px; font-family: 'Quicksand';">
+        <p>&copy; 2025 - 🌈 Materi Matematika Ceria 🌈</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+/* ============ Reset & Global ============ */
+:root {
+    --primary: #FF6B6B;      /* Pink Ceria */
+    --secondary: #4ECDC4;    /* Tosca */
+    --accent: #FFE66D;       /* Kuning Matahari */
+    --purple: #6C5CE7;       /* Ungu Utama */
+    --bg-light: #F7FFF7;     /* Background Mint */
+    --text-main: #2F3061;    /* Biru Gelap */
+    --radius-lg: 25px;
+    --radius-md: 15px;
+}
+
+/* ============ Reset Ringan & Global Styles ============ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    /* Font */
+    font-family: 'Quicksand', 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    /* Background Gradient agar senada dengan Hero */
+    background: radial-gradient(circle at 10% 20%, rgba(255, 230, 109, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(78, 205, 196, 0.15) 0%, transparent 40%),
+                var(--bg-light);
+    line-height: 1,6;
+    /* Pusat formulir */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Login form style */
+
+/* Container utama/card */
+.form-container {
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    /* Bayangan 3D tebal khas tema Math Ceria */
+    box-shadow: 0 15px 0px rgba(108, 92, 231, 0.1); 
+    border: 3px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.form-container h2{
+        text-align: center;
+        color: var(--purple);
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 32px;
+        font-weight: 800;
+        text-shadow: 2px 2px 0px var(--accent);
+}
+
+/* Form p */
+.form-container p{
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-container label{
+    display: block;
+    color:  var(--text-main);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+/* Kolom input */
+.form-container input[type='text'],
+.form-container input[type='email'],
+.form-container input[type='password'] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 3px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.2s ease;
+    background-color: #fcfcfc;
+}
+
+/* Fokus pada Input (Efek saat diklik) */
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    border-color: var(--secondary);    
+    outline: none;
+    /* Ring shadow ungu lembut */
+    box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.2);
+    background-color: #ffffff;
+}
+
+/* Gaya untuk pesan error (errorlist) yang dihasilkan Django */
+.form-container ul.errorlist {
+    color: #ffffff;
+    background: var(--primary);
+    border: 1px solid #f87171;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    list-style: none;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Tombol Submit */
+.form-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Menggunakan warna Primary (Pink/Merah Jambu) dari tema proyek */
+    background: var(--purple); 
+    color: #ffffff;
+    /* Efek tombol 3D */
+    border-bottom: 5px solid #5649c0;
+    box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+    
+    transition: all 0.1s ease;
+}
+
+.form-container button[type="submit"]:hover {
+    background: #7a6bff;
+    transform: translateY(-2px); /* Efek melayang sedikit */
+    box-shadow: 0 8px 18px rgba(255, 93, 162, 0.4);
+}
+
+.form-container button[type="submit"]:active {
+    transform: translateY(3px);
+    border-bottom-width: 0px;
+}
+
+.form-container a[type="register"] {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: color 0.2s;
+}
+
+.form-container a[type="home"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 0px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+.form-container a:hover {
+    color: var(--primary);
+}
+
+/* Khusus link yang bergaya tombol (jika ada) */
+.form-container a.btn-alt {
+    background: #f0f0f0;
+    border-radius: 50px;
+    color: var(--text-main);
+}

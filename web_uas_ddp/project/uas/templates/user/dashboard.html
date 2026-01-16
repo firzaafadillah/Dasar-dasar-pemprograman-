@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MathEdu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css' %}?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">∑</span>
+                <span class="brand-name">Math Ceria</span>
+            </div>
+
+            <nav class="site-nav" aria-label="Navigasi utama">
+                <ul class="nav-list">
+                    <li><a class="nav-link is-active" href="#">Beranda</a></li>
+                    <li><a class="nav-link" href="#materi">Materi</a></li>
+                    <li><a class="nav-link" href="#about-us">Tentang Kami</a></li>
+                </ul>
+
+                <div class="auth-actions">
+                    {% if user.is_authenticated %}
+                    <span class="btn btn-secondary btn-login">Welcome, {{ user.username }}</span>
+                    <a class="btn btn-register" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="btn btn-secondary btn-login" href="{% url 'login' %}">Masuk</a>
+                    <a class="btn btn-register" href="{% url 'register' %}">Daftar</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">Belajar Matematika Jadi <span class="highlight">Menyenangkan!</span></h1>
+                    <p class="hero-subtitle">
+                        Belajar angka jadi seru seperti bermain! Matematika jadi teman bermain yang menyenangkan! Main
+                        sambil belajar angka setiap hari! Ayo belajar angka dengan cara ceria! Matematika itu asyik, yuk
+                        kita coba!
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="{% url 'login' %}">Mulai Belajar</a>
+                    </div>
+                </div>
+
+                <div class="hero-illustration" aria-hidden="true">
+                    <svg class="chart-card" viewBox="0 0 360 240" role="img">
+                        <defs>
+                            <linearGradient id="cardGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#5B9DFF" />
+                                <stop offset="100%" stop-color="#8A5BFF" />
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="12" y="12" width="336" height="216" rx="16" fill="url(#cardGradient)" opacity="0.15">
+                        </rect>
+                        <rect x="18" y="18" width="324" height="204" rx="14" fill="#ffffff" opacity="0.9"></rect>
+
+                        <line x1="48" y1="190" x2="312" y2="190" stroke="#CBD5E1" stroke-width="2"></line>
+                        <line x1="48" y1="54" x2="48" y2="190" stroke="#CBD5E1" stroke-width="2"></line>
+
+                        <g stroke="#E2E8F0" stroke-width="1">
+                            <line x1="48" y1="160" x2="312" y2="160"></line>
+                            <line x1="48" y1="130" x2="312" y2="130"></line>
+                            <line x1="48" y1="100" x2="312" y2="100"></line>
+                            <line x1="48" y1="70" x2="312" y2="70"></line>
+                        </g>
+
+                        <polyline points="48,180 88,150 128,168 168,120 208,140 248,90 288,110 312,80" fill="none"
+                            stroke="#6C5CE7" stroke-width="3" stroke-linecap="round"></polyline>
+
+                        <g fill="#FF5DA2" stroke="#ffffff" stroke-width="2">
+                            <circle cx="88" cy="150" r="5"></circle>
+                            <circle cx="128" cy="168" r="5"></circle>
+                            <circle cx="168" cy="120" r="5"></circle>
+                            <circle cx="208" cy="140" r="5"></circle>
+                            <circle cx="248" cy="90" r="5"></circle>
+                            <circle cx="288" cy="110" r="5"></circle>
+                            <circle cx="312" cy="80" r="5"></circle>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Materi Section -->
+
+    <section id="materi">
+        <div class="container">
+            <h2 class="section-title">Materi Pembelajaran</h2>
+
+            <div class="materi-grid">
+                {% if user.is_authenticated %}
+                <a href="{% url 'berhitung' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Berhitung</h3>
+                            <p>Ayo jadi pahlawan angka! Belajar tambah-tambahan dan kawan-kawannya dengan cara yang seru. Bantu teman-temanmu mengumpulkan poin dan pecahkan teka-teki ajaib.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'geometri' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Bentuk Geometri</h3>
+                            <p>Kenalan dengan 'Teman Bentuk'! Ada si bulat yang ceria dan si kotak yang kuat. Ayo pelajari sifat-sifat unik mereka sambil bermain dan menggambar!</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'bilangan' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Bilangan</h3>
+                            <p>Mulai petualanganmu dari angka nol sampai tak terhingga! Yuk, belajar mengurutkan angka, mengenal bilangan ganjil-genap, dan temukan kunci rahasia di balik barisan angka ajaib!</p>
+                        </div>
+                    </div>
+                </a>
+                {% else %}
+                                <a href="{% url 'login' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Berhitung</h3>
+                            <p>Ayo jadi pahlawan angka! Belajar tambah-tambahan dan kawan-kawannya dengan cara yang seru. Bantu teman-temanmu mengumpulkan poin dan pecahkan teka-teki ajaib.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Bentuk Geometri</h3>
+                            <p>Kenalan dengan 'Teman Bentuk'! Ada si bulat yang ceria dan si kotak yang kuat. Ayo pelajari sifat-sifat unik mereka sambil bermain dan menggambar!</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}" class="materi-card-link" style="text-decoration: none; color: inherit;">
+                    <div class="materi-card">
+                        <div class="materi-icon">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <div class="materi-content">
+                            <h3>Bilangan</h3>
+                            <p>Mulai petualanganmu dari angka nol sampai tak terhingga! Yuk, belajar mengurutkan angka, mengenal bilangan ganjil-genap, dan temukan kunci rahasia di balik barisan angka ajaib!;</p>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="about-us-section">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <p class="about-description">
+                Selamat datang di [Nama Website/Perusahaan Anda]! Kami adalah tim yang bersemangat dan berdedikasi untuk
+                <span class="highlight-text">membantu Anda menciptakan web yang indah dan fungsional</span>.
+                Didirikan pada [Tahun Didirikan], kami percaya bahwa <span class="highlight-text">desain yang baik
+                    adalah kunci komunikasi yang efektif</span>.
+                Misi kami adalah menghadirkan solusi desain web yang inovatif dan mudah digunakan untuk semua.
+            </p>
+
+            <h3 class="section-title">Tentang Proyek Kami</h3>
+            <div class="project-info" style="margin-bottom: 50px; margin-top: 30px; background: #f9f9f9; padding: 30px; border-radius: 20px; border-left: 5px solid #6C5CE7;">
+                <h3 style="font-family: 'Quicksand'; font-weight: 700; color: #2F3061; margin-bottom: 15px;">
+                </h3>
+                <p style="font-family: 'Quicksand'; line-height: 1.8; color: #444;">
+                    Proyek <strong>Math Ceria</strong> lahir dari keinginan kami untuk mengubah pandangan bahwa matematika itu sulit. 
+                    Melalui antarmuka yang penuh warna, penggunaan emoji yang akrab bagi anak-anak, dan penjelasan yang sederhana, 
+                    kami membangun ekosistem digital di mana:
+                </p>
+                <ul style="font-family: 'Quicksand'; color: #444; margin-top: 10px; list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 10px;"></i> <strong>Visual Pertama:</strong> Anak-anak belajar melalui gambar dan simbol yang nyata.</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 10px;"></i> <strong>Bahasa Ceria:</strong> Menggunakan istilah yang mudah dipahami seperti "teman bentuk" atau "angka menggelinding".</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 10px;"></i> <strong>Aksesibilitas:</strong> Materi dapat diakses kapan saja untuk menemani waktu bermain anak di rumah.</li>
+                </ul>
+
+            <h3 class="team-subtitle">Kenali Tim Kami</h3>
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <img src="{% static 'images/Firza.jpeg' %}" alt="Foto Anggota 1" class="member-photo">
+                    <h4>Firza Fadillah</h4>
+                    <p class="member-title">Full-stack</p>
+                    <p class="member-bio">bertanggung jawab merancang arsitektur sistem yang kokoh dari sisi server hingga antarmuka. Ia memastikan keamanan data pengguna melalui pengembangan fitur login dan registrasi yang aman, serta mengoptimalkan performa website agar seluruh ekosistem belajar berjalan lancar tanpa kendala.
+                    </p>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="{% static 'images/arjuna.png' %}" alt="Foto Anggota 2" class="member-photo">
+                    <h4>Arjuna Zidni Rizqi Rahayu</h4>
+                    <p class="member-title">UX Architect</p>
+                    <p class="member-bio">Arsitek di balik halaman Dashboard utama. Arjuna merancang alur navigasi yang intuitif agar setiap pengguna dapat mengakses materi pembelajaran dengan mudah, cepat, dan nyaman</p>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="{% static 'images/rayhan.jpeg' %}" alt="Foto Anggota 3" class="member-photo">
+                    <h4>Muhammad Rayhan Maulana</h4>
+                    <p class="member-title">Logic Specialist</p>
+                    <p class="member-bio">Membangun fondasi teknis Math Ceria, termasuk modul utama pada halaman Bilangan. Rayhan memastikan setiap fitur berjalan optimal agar pengalaman belajar si kecil tidak terhambat oleh kendala teknis.</p>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="#" alt="Foto Anggota 4" class="member-photo">
+                    <h4>Asysyifa Ainaya Zahra</h4>
+                    <p class="member-title">Curriculum Specialist</p>
+                    <p class="member-bio">Asy Syifa adalah sosok di balik penyusunan konten materi Bilangan. Ia merancang setiap penjelasan dan urutan angka agar menjadi informasi yang edukatif, sistematis, dan mudah diserap oleh imajinasi anak-anak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <footer class="site-footer" style="background-color: #2F3061; color: #ffffff; padding: 40px 0; margin-top: 50px; font-family: 'Quicksand', sans-serif;">
+        <div class="container" style="text-align: center;">
+            <div class="footer-content">
+                <div class="footer-logo" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">
+                    <span style="color: #FFD93D;">∑</span> Math Ceria
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px;">
+                    Media belajar matematika yang seru dan menyenangkan untuk masa depan anak bangsa.
+                </p>
+                <div class="social-links" style="margin-bottom: 25px;">
+                    <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+                <p class="copyright" style="font-size: 0.85rem; opacity: 0.7;">
+                    &copy; 2026 <strong>Math Ceria</strong>. Hak Cipta Dilindungi Undang-Undang.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

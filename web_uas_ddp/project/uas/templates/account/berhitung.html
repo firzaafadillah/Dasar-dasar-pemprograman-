@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Ceria - Belajar Berhitung</title>
+    <link rel="stylesheet" href="{% static 'bilangan.css' %}?v=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">∑</span>
+                <span class="brand-name">Math Ceria</span>
+            </div>
+            <nav class="site-nav">
+                <div class="auth-actions">
+                    <a href="{% url 'dashboard' %}" class="btn btn-logout">Keluar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="materi">
+        <div class="container">
+            <h1 class="section-title">Ayo Belajar Berhitung!</h1>
+            <p style="text-align: center; font-family: 'Quicksand'; font-weight: 700; color: #2F3061; margin-top: -20px; margin-bottom: 40px;">
+                Lihat gambarnya dan hitung bersama-sama ya!
+            </p>
+
+            <div class="materi-grid">
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">🍎</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">10</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #FF6B6B;">Sepuluh Apel</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                🍎🍎🍎🍎🍎<br>🍎🍎🍎🍎🍎
+                            </div>
+                            <div class="contoh-box">Segar dan manis!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FF9F43, #FFBD7E);">🐔</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">5</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #FF9F43;">Lima Ayam</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                🐔🐔🐔<br>🐔🐔
+                            </div>
+                            <div class="contoh-box">Petok petok!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FFE66D, #fff0a3);">⭐</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">4</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #d4bc31;">Empat Bintang</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                ⭐ ⭐ ⭐ ⭐
+                            </div>
+                            <div class="contoh-box">Berkilau di langit!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #6C5CE7, #a29bfe);">🎈</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">2</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #6C5CE7;">Dua Balon</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                🎈 🎈
+                            </div>
+                            <div class="contoh-box">Jangan sampai lepas!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #4ECDC4, #78E0D8);">🌼</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">3</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #4ECDC4;">Tiga Bunga</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                🌼 🌼 🌼
+                            </div>
+                            <div class="contoh-box">Harum sekali bunganya!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FF6B81, #ff9ca1);">🍓</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">1</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #FF6B81;">Satu Stroberi</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0;">
+                                🍓
+                            </div>
+                            <div class="contoh-box">Hanya ada satu!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #F9D423, #ffdb3a);">🍌</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">6</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #F9D423;">Enam Pisang</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                🍌🍌🍌<br>🍌🍌🍌
+                            </div>
+                            <div class="contoh-box">Pisang kuning lezat!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card-link">
+                    <div class="materi-card">
+                        <div class="materi-icon" style="background: linear-gradient(135deg, #FD79A8, #fab1a0);">❤️</div>
+                        <div class="materi-content">
+                            <h3 style="font-size: 3.5rem; margin: 0;">8</h3>
+                            <p style="font-size: 1.5rem; font-weight: 800; color: #FD79A8;">Delapan Hati</p>
+                            <div style="font-size: 1.5rem; margin: 15px 0; letter-spacing: 5px;">
+                                ❤️❤️❤️❤️<br>❤️❤️❤️❤️
+                            </div>
+                            <div class="contoh-box">Penuh kasih sayang!</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #666; font-family: 'Quicksand'; font-weight: 700;">
+        <p>&copy; 2026 - 🌈 Materi Matematika Ceria 🌈</p>
+    </footer>
+
+</body>
+</html>

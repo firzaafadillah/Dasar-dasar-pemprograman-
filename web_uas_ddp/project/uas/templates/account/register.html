@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar Akun</title>
+
+    <link rel="stylesheet" href="{% static 'register.css' %}?v=1.0">
+    
+    </head>
+<body>
+
+    <div class="form-container">
+        <h2>Daftar Akun Baru</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ forms.as_p }}
+            <button type="submit">Daftar</button>
+            <a type="login" href="{% url 'login' %}">Sudah punya akun?</a>
+            <a type="home" href="{% url 'beranda' %}">Kembali ke home?</a>
+        </form>
+    </div>
+</body>
+</html>
+
